@@ -1,0 +1,15 @@
+#cloud-config
+users:
+  - name: ubuntu
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    home: /home/ubuntu
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCypM//21mvBrcVt1tGwHOCvIGyrKdMEnflGQp66760FX1Pgp39HsasWFyEYFEkaXwuue3nvxGJnme+LsmWHGRzFQd+QO7GKqwhIhQ/U0+e0ZpEJMpOfOtEK+wOFKLygwQEtpTOmyAfgO5UmTalLj2Da4CMbURtvGBEPjxJketlrhaFtSFPjIxYUEUT1E7QE2KiQxg+ELkCkaqZOok9D4WsMD6HCkUfvUaAOBuVSwH3BVPQCS85TtY5uzlLE7tvL7lsEL2rTeRlhUK003jFSMxVvkQdA9aH2jGD+dM2raVt9TYHRyKzPEePjzljvvei5MbHrmwOpFUB0/EB5Z0BH48J aws-key       
+ssh_pwauth: false
+disable_root: false 
+package_update: true
+packages:
+  - curl 
+  - wget 
