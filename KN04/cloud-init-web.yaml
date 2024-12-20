@@ -1,8 +1,0 @@
-#cloud-config
-
-package-update: true
-packages: 
-  - apache2
-  - adminer
-runcmd: 
-  - sudo a2enconf adminer

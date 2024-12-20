@@ -16,20 +16,11 @@ packages:
   - wget 
   - php
   - libapache2-mod-php
-  - mariadb-server
-  - php-mysqli
   - git
   - apache2
   - adminer
+
+
 runcmd:
-  - sudo mysql -sfu root -e "CREATE USER IF NOT EXISTS 'admin'@'%' IDENTIFIED BY '123';"
-  - sudo mysql -sfu root -e "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;"
-  - sudo mysql -sfu root -e "FLUSH PRIVILEGES;"
-  - sudo systemctl restart mariadb.service
-  - git clone https://gitlab.com/ch-tbz-it/Stud/m346/m346scripts.git
-  - sudo cp ./m346scripts/KN03/*.php /var/www/html/
-  - sudo sed -i 's/???/123/g' /var/www/html/db.php | cat
-  - sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf | cat
   - sudo a2enconf adminer
-  - sudo systemctl restart mariadb.service
   - sudo systemctl restart apache2
