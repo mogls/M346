@@ -16,7 +16,6 @@ packages:
   - wget 
   - php
   - libapache2-mod-php
-  - git
   - apache2
   - adminer
 
