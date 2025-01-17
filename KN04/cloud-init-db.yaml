@@ -12,7 +12,6 @@ ssh_pwauth: false
 disable_root: false 
 package_update: true
 packages:
-  - php
   - mariadb-server
   - wget
   - curl
